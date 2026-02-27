@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phammy141807</title>
+
+<style>
+body{
+margin:0;
+font-family:Consolas,monospace;
+background:radial-gradient(circle at center,#001a33,#000814);
+color:#ccf6ff;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+/* ===== STAR BACKGROUND ===== */
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 100s linear infinite;
+opacity:0.4;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:2000px 2000px;}
+}
+
+/* ===== FLOATING CHEMISTRY ===== */
+.reaction{
+position:absolute;
+color:rgba(120,200,255,0.15);
+font-size:20px;
+white-space:nowrap;
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(110vh);}
+100%{transform:translateY(-120vh);}
+}
+
+/* ===== CARD ===== */
+.card{
+position:relative;
+background:rgba(0,30,60,0.85);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(12px);
+text-align:center;
+width:360px;
+box-shadow:0 0 60px rgba(0,150,255,0.25);
+z-index:2;
+}
+
+/* ===== SULFUR ATOM ===== */
+.avatar-container{
+position:relative;
+width:260px;
+height:260px;
+margin:auto;
+}
+
+/* Avatar nucleus */
+.avatar{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #66e0ff;
+box-shadow:0 0 30px rgba(0,200,255,0.9);
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:5;
+}
+
+/* Orbit base */
+.orbit{
+position:absolute;
+top:50%;
+left:50%;
+border:1px solid rgba(102,224,255,0.25);
+border-radius:50%;
+transform:translate(-50%,-50%);
+}
+
+/* Shell sizes */
+.orbit1{
+width:160px;
+height:160px;
+animation:spin1 6s linear infinite;
+}
+
+.orbit2{
+width:210px;
+height:210px;
+animation:spin2 10s linear infinite;
+}
+
+.orbit3{
+width:260px;
+height:260px;
+animation:spin3 14s linear infinite;
+}
+
+/* Electron */
+.electron{
+position:absolute;
+top:50%;
+left:50%;
+width:10px;
+height:10px;
+background:#66e0ff;
+border-radius:50%;
+box-shadow:0 0 12px #66e0ff;
+}
+
+/* Spin directions */
+@keyframes spin1{
+from{transform:translate(-50%,-50%) rotate(0deg);}
+to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+@keyframes spin2{
+from{transform:translate(-50%,-50%) rotate(360deg);}
+to{transform:translate(-50%,-50%) rotate(0deg);}
+}
+
+@keyframes spin3{
+from{transform:translate(-50%,-50%) rotate(0deg);}
+to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+h1{
+margin-top:30px;
+letter-spacing:2px;
+}
+
+.subtitle{
+font-size:13px;
+color:#66d9ff;
+margin-bottom:25px;
+}
+
+/* ===== LINKS ===== */
+.link{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin:10px 0;
+padding:10px;
+text-decoration:none;
+border:1px solid #33ccff;
+color:#ccf6ff;
+border-radius:8px;
+transition:0.3s;
+}
+
+.link svg{
+width:18px;
+height:18px;
+fill:white;
+}
+
+.link:hover{
+background:#33ccff;
+color:#001a33;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- Floating chemical reactions -->
+<div class="reaction" style="left:5%;animation-duration:45s;">H₂ + O₂ → H₂O</div>
+<div class="reaction" style="left:20%;animation-duration:60s;">Na + Cl → NaCl</div>
+<div class="reaction" style="left:35%;animation-duration:55s;">Fe + S → FeS</div>
+<div class="reaction" style="left:50%;animation-duration:70s;">2KClO₃ → 2KCl + 3O₂</div>
+<div class="reaction" style="left:65%;animation-duration:50s;">CaCO₃ → CaO + CO₂</div>
+<div class="reaction" style="left:80%;animation-duration:65s;">HCl + NaOH → NaCl + H₂O</div>
+<div class="reaction" style="left:90%;animation-duration:75s;">NH₃ + HCl → NH₄Cl</div>
+<div class="reaction" style="left:15%;animation-duration:85s;">2H₂O₂ → 2H₂O + O₂</div>
+<div class="reaction" style="left:70%;animation-duration:90s;">Zn + 2HCl → ZnCl₂ + H₂</div>
+
+<div class="card">
+
+<div class="avatar-container">
+
+<!-- Orbit 1 (2e) -->
+<div class="orbit orbit1">
+<div class="electron" style="transform:rotate(0deg) translateX(80px);"></div>
+<div class="electron" style="transform:rotate(180deg) translateX(80px);"></div>
+</div>
+
+<!-- Orbit 2 (8e) -->
+<div class="orbit orbit2">
+<div class="electron" style="transform:rotate(0deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(45deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(90deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(135deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(180deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(225deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(270deg) translateX(105px);"></div>
+<div class="electron" style="transform:rotate(315deg) translateX(105px);"></div>
+</div>
+
+<!-- Orbit 3 (6e) -->
+<div class="orbit orbit3">
+<div class="electron" style="transform:rotate(0deg) translateX(130px);"></div>
+<div class="electron" style="transform:rotate(60deg) translateX(130px);"></div>
+<div class="electron" style="transform:rotate(120deg) translateX(130px);"></div>
+<div class="electron" style="transform:rotate(180deg) translateX(130px);"></div>
+<div class="electron" style="transform:rotate(240deg) translateX(130px);"></div>
+<div class="electron" style="transform:rotate(300deg) translateX(130px);"></div>
+</div>
+
+<img src="public/your-avatar.jpg" class="avatar">
+
+</div>
+
+<h1>Phammy141807</h1>
+
+<div class="subtitle">
+Coder: C++, HTML, JS, Python, GDScript <br>
+Inorganic Chemistry • Acid Reactions • Systems
+</div>
+
+<a class="link" href="https://github.com/Phammy141807" target="_blank">GitHub</a>
+<a class="link" href="https://www.youtube.com/@MeLuy-1804" target="_blank">YouTube</a>
+<a class="link" href="https://discord.com/invite/sjzx4PBKk9" target="_blank">Discord</a>
+
+</div>
+
+</body>
+</html>
