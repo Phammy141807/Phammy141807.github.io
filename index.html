@@ -43,6 +43,10 @@ animation:float linear infinite;
 }
 
 @keyframes float{
+0%{transform:translateY(100vh);opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-120vh);opacity:0;}
+}@keyframes float{
 0%{transform:translateY(110vh);}
 100%{transform:translateY(-120vh);}
 }
@@ -176,6 +180,30 @@ fill:white;
 background:#33ccff;
 color:#001a33;
 }
+  /* ===== MUSIC DISC ===== */
+.music-disc{
+position:fixed;
+bottom:20px;
+right:20px;
+width:80px;
+height:80px;
+border-radius:50%;
+animation:spinDisc 5s linear infinite;
+cursor:pointer;
+z-index:10;
+}
+
+@keyframes spinDisc{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* ===== CONTACT INFO ===== */
+.contact{
+margin-top:15px;
+font-size:13px;
+color:#99e6ff;
+}
 </style>
 </head>
 
@@ -240,11 +268,28 @@ Inorganic Chemistry • Acid Reactions • Systems
 <a class="link" href="https://github.com/Phammy141807" target="_blank">GitHub</a>
 <a class="link" href="https://www.youtube.com/@MeLuy-1804" target="_blank">YouTube</a>
 <a class="link" href="https://discord.com/invite/sjzx4PBKk9" target="_blank">Discord</a>
-
+<div class="contact">
+📍 Vietnam <br>
+📧 yourmail@gmail.com
 </div>
-
+</div>
+<audio id="bgm" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+  <img src="record.png" class="music-disc" onclick="toggleMusic()">
+  <script>
+function toggleMusic(){
+  const music = document.getElementById("bgm");
+  if(music.paused){
+    music.play();
+  } else{
+    music.pause();
+  }
+}
+</script>
 </body>
 
 </html>
+
 
 
